@@ -1,12 +1,15 @@
-import React, { Component } from "react"
+import React from "react"
 
-export class NewsItem extends Component {
-    render() {
-        let { title, description, imageUrl, newsUrl, author, date, source } = this.props;
+const NewsItem = (props)=> {
+        let { title, description, imageUrl, newsUrl, author, date, source } = props;
         return (
             <div className="my-3">
-                <div className="card" style={{ width: "18rem", height: "26rem", boxShadow: "0 2px 10px 0 rgba(0,0,0,0.2)" }}>
-                <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left:'12%', zIndex:'1'}}> {source} </span>
+                <div className="card" style={{ width: "18rem", height: "25rem", boxShadow: "0 2px 10px 0 rgba(0,0,0,0.2)" }}>
+                
+                <div style={{display:'flex', justifyContent: 'flex-start', position: 'absolute', left: '0'}}>
+                <span className="badge bg-danger"> {source} </span>
+                </div> 
+                    
                     <img src={!imageUrl ? "https://www.team-bhp.com/sites/default/files/styles/large/public/toyota-innova-hycross-sunroof-moonroof0.jpg" : imageUrl} className="card-img-top" alt="..." style={{ width: "17.5=9rem", height: "10rem" }} />
                     <div className="card-body" >
                         <h5 className="card-title">{title}...</h5>
@@ -18,6 +21,5 @@ export class NewsItem extends Component {
             </div>
         )
     }
-}
 
 export default NewsItem;
