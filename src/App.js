@@ -17,14 +17,14 @@ export default class App extends Component {
       <Router>
       <Navbar/>
       <Routes>
-          <Route path="/" element={<News pageSize={16} country="in" category="general"/>}></Route>
-          <Route path="/business" element={<News pageSize={16} country="in" category="business"/>}></Route>
-          <Route path="/entertainment" element={<News pageSize={16} country="in" category="entertainment"/>}></Route>
-          <Route path="/general" element={<News pageSize={16} country="in" category="general"/>}></Route>
-          <Route path="/health" element={<News pageSize={16} country="in" category="health"/>}></Route>
-          <Route path="/science" element={<News pageSize={16} country="in" category="science"/>}></Route>
-          <Route path="/sports" element={<News pageSize={16} country="in" category="sports"/>}></Route>
-          <Route path="/technology" element={<News pageSize={16} country="in" category="technology"/>}></Route>
+          <Route exact path="/" element={<News pageSize={16} country="in" category="general"/>}></Route>
+          <Route exact path="/business" element={<News pageSize={16} country="in" category="business"/>}></Route>
+          <Route exact path="/entertainment" element={<News pageSize={16} country="in" category="entertainment"/>}></Route>
+          <Route exact path="/general" element={<News pageSize={16} country="in" category="general"/>}></Route>
+          <Route exact path="/health" element={<News pageSize={16} country="in" category="health"/>}></Route>
+          <Route exact path="/science" element={<News pageSize={16} country="in" category="science"/>}></Route>
+          <Route exact path="/sports" element={<News pageSize={16} country="in" category="sports"/>}></Route>
+          <Route exact path="/technology" element={<News pageSize={16} country="in" category="technology"/>}></Route>
         </Routes>
       </Router>
     </div>
