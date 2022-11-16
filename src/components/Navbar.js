@@ -20,6 +20,7 @@ export class Navbar extends Component {
                 <li className='nav-items'><a className="nav-link active" href="/Science">Science</a> </li>
                 <li className='nav-items'><a className="nav-link active" href="/Sports">Sports</a> </li>
                 <li className='nav-items'><a className="nav-link active" href="/Technology">Technology</a> </li>
+                <li className='nav-items'><a className="nav-link active" href="/Technology">Actions</a> </li>
            
             </ul>
                 </div>
