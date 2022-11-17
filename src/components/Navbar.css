@@ -1,0 +1,42 @@
+.navbar {
+    background-color: #2d5cc2;
+    padding: 10px 20px;
+    box-shadow: 0 10px 20px rgba(255,255,255,0.3);
+}
+
+ul .navbar-nav {
+    list-style: none;
+}
+li{
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 4px;
+}
+
+li a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 1s;
+}
+
+li::after {
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    transition: width .5s;
+}
+
+li a:hover {
+    color: rgb(45,168,240);
+}
+
+li:hover::after {
+    width: 100%;
+    background-color: rgb(190, 196, 199);
+}

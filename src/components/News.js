@@ -22,6 +22,7 @@ const News = (props)=> {
     let data = await fetch(url);
     props.setProgress(30);
     let parsedData = await data.json()
+    console.log(parsedData);
     props.setProgress(70);
     setArticles(parsedData.articles)
     setTotalResults(parsedData.totalResults)
@@ -41,13 +42,14 @@ const News = (props)=> {
     setPage(page + 1)
     let data = await fetch(url);
     let parsedData = await data.json()
+    console.log(parsedData);
     setArticles(articles.concat(parsedData.articles))
     setTotalResults(parsedData.totalResults)
   };
 
     return (
       <div className='m-5'>
-        <h1 className='text-center' style={{ margin: "30px 0px", marginTop: '90px' }}>{capitalizeFirstLetter(props.category)} - Top Headlines</h1>
+        <h1 className='text-center' style={{ margin: "30px 0px", marginTop: '100px', fontWeight:'600', textShadow: '1px 0px 2px grey' }}>{capitalizeFirstLetter(props.category)} - Top Headlines</h1>
         {loading && <Spinner />}
         <InfiniteScroll
           dataLength={articles.length}
@@ -59,8 +61,8 @@ const News = (props)=> {
         <div className='container'>
         <div className="row">
           {articles.map((element) => {
-            return <div className="col-12 col-sm-3 " key={element.url} >
-              <NewsItem title={element.title ? element.title.slice(0, 20) : ""} description=
+            return <div className="col-12 col-sm-4 " key={element.url} >
+              <NewsItem title={element.title ? element.title.slice(0, 25) : ""} description=
                 {element.description ? element.description.slice(0, 55) : ""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
             </div>
           })}
